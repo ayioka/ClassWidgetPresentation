@@ -1,16 +1,27 @@
-# interactive_viewer_demo
+#Flutter Interactive viewer demo widget
+InteractiveViewer is a Flutter widget that wraps any child with built-in pinch-to-zoom and pan gestures, no third-party packages required.
+*Run Instructions*
+Requirements: Flutter 3.0+ · Dart 3.0+
 
-A new Flutter project.
+# 1. Clone or download this project
+git clone https://github.com/your-username/interactive_viewer_demo.git
+cd interactive_viewer_demo
 
-## Getting Started
+# 2. Get dependencies (none beyond Flutter SDK)
+flutter pub get
 
-This project is a starting point for a Flutter application.
+# 3. Run on a connected device or emulator
+flutter run
 
-A few resources to get you started if this is your first Flutter project:
+Key Attributes
+minScale / maxScale
+Controls how far the user can zoom out and in. In this demo the map can be zoomed from 40% down to 500% up — giving plenty of room to explore city detail without losing the full map view.
+boundaryMargin
+Adds extra panning space beyond the child's edges. Without it the map snaps back the moment its border reaches the screen edge. Set to EdgeInsets.all(300) here so you can pan fluidly to any corner.
+A TransformationController that gives you full programmatic read/write access to the current zoom and pan matrix. Used in this demo to power the +/−/Reset buttons and the animated fly-to-city feature via Matrix4Tween
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+lib/
+└── main.dart          # Complete single-file implementation
+screenshot.png         # UI preview
+pubspec.yaml           # Project manifest (no extra dependencies)
+README.md              # This file
